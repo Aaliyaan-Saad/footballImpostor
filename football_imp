@@ -1,0 +1,53 @@
+from time import sleep
+from random import randint
+
+players = [
+    "Lionel Messi", "Cristiano Ronaldo", "Diego Maradona", "Neymar", "Kylian Mbappe",
+    "Kevin De Bruyne", "Pele", "Robert Lewandowski", "Virgil van Dijk", "Sergio Ramos",
+    "Erling Haaland", "Karim Benzema", "Sadio Mane", "Harry Kane", "Zinedine Zidane",
+    "Luka Modric", "Paul Pogba", "Ronaldinho", "Bruno Fernandes", "Eden Hazard",
+    "Toni Kroos", "Raheem Sterling", "Zlatan Ibrahimovic", "Thomas Muller",
+    "Pierre-Emerick Aubameyang", "Jan Oblak", "Manuel Neuer", "Alisson Becker",
+    "Franz Beckenbauer", "Thibaut Courtois", "Joshua Kimmich", "Gianluigi Donnarumma",
+    "Romelu Lukaku", "Jadon Sancho", "Marcus Rashford", "Sergio Aguero",
+    "Gerard Pique", "Jordi Alba", "David de Gea", "Andy Robertson", "George Best",
+    "Phil Foden", "Mason Mount", "Pedri", "Joao Felix", "Alfredo Di Stefano",
+    "Ansu Fati", "Marco Verratti", "Son Heung-min", "Christian Pulisic",
+    "Achraf Hakimi", "Matthijs de Ligt", "Kalidou Koulibaly", "Aymeric Laporte",
+    "Marquinhos", "Trent Alexander-Arnold", "Thiago Silva", "Lev Yashin",
+    "Marco van Basten", "Roberto Carlos", "David Beckham", "Garrincha", "Eric Cantona",
+    "Xavi", "Andres Iniesta", "Michel Platini", "Thierry Henry", "Ronaldo Nazario",
+    "Paolo Maldini"
+]
+
+
+roles = [""] * 3
+qwert = ["aali", "fahad", "fawaz"]
+score = [0] * 3
+
+for y in range(len(score)):
+    score[y] = randint(1, 999)
+    '''
+    print(score[y])
+    '''
+
+def assignments(player):
+    if score[0] > score[1] and score[0] > score[2]:
+        roles[0], roles[1], roles[2] = "impostor", player, player
+    elif score[1] > score[0] and score[1] > score[2]:
+        roles[0], roles[1], roles[2] = player, "impostor", player
+    elif score[2] > score[0] and score[2] > score[1]:
+        roles[0], roles[1], roles[2] = player, player, "impostor"
+
+anyone = randint(0, 70)
+assignments(players[anyone])
+
+for z in range(len(qwert)):
+    print(qwert[z], "role is", roles[z])
+
+    if z<2:
+     for x in range(5):
+        sleep(1)
+        print("tera baaaaaaaaaaaaaaaaaaap", str(x))
+
+
